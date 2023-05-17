@@ -1,0 +1,11 @@
+GET http://localhost:3009/movies/
+###
+GET http://localhost:3009/movies/:movieId/
+###
+GET http://localhost:3009/directors/
+###
+
+GET http://localhost:3009/directors/:directorId/movies
+
+
+
