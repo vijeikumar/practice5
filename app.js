@@ -47,9 +47,9 @@ app.get("/movies/", async (request, response) => {
 });
 
 app.post("/movies/", async (request, response) => {
-  const { directorId, movieName, leadActor } =request.body ;
+  const { directorId, movieName, leadActor } = request.body;
   const addDetails = `INSERT INTO movie (director_id,movie_name,lead_actor) 
-    VALUES (${directorId},`${movieName}`,`${leadActor}`);`;
+    VALUES (${directorId},'${movieName}','${leadActor}');`;
   await db.run(addDetails);
 
   response.send("Movie Successfully Added");
@@ -68,8 +68,8 @@ app.put("/movies/:movieId", async (request, response) => {
   const { directorId, movieName, leadActor } = getTheMovies;
   const getFromDb = `UPDATE movie SET 
     director_id=${directorId},
-    movie_name=`${movieName}`,
-    lead_actor=`${leadActor}`
+    movie_name='${movieName}',
+    lead_actor='${leadActor}'
     WHERE 
     movie_id=${movieId}`;
   await db.run(getFromDb);
